@@ -52,10 +52,9 @@ while scan == 0:
             charcheck = charcheck+data[curchar+20]
             charcheck = charcheck+data[curchar+21]
             charcheck = charcheck+data[curchar+22]
-            #print (charcheck)
             if charcheck == endpage:
                 #hfinal = hfinal + h1 #Combines all six digit numbers on the page into a single variable.
-                if filled <= 200:
+                if filled <= 200: #Proceding just writes the numbers to a text file. It uses 16 text files because there's too much data to be sotred in one text file, because I'm too lazy to code it to remove duplicates.
                     with open("E:\\ALL OF N\\nh-pdf-downloader-master\\Alleng1.txt", "a") as file:
                         file.write(h1)
                         file.close
@@ -154,10 +153,7 @@ while scan == 0:
                 curpage = curpage + 1 #Now that all six digit numbers on the page are saved, we can move on to searching the next page.
                 print(curpage)
                 if curpage == 3117: #Check how many English pages on NHentai, then change this var to that ammount.
-                    print('done') #This prints out literally every six digit number on every page.
-                    #with open("E:\\ALL OF N\\nh-pdf-downloader-master\\Alleng.txt", "w") as file:
-                        #file.write(hfinal)
-                        #file.close
+                    print('done')
                 curpagestr = str(curpage)
                 comburl =                                                                                                                                                                     "https://nhentai.net/search/?q=english&page="+curpagestr
                 url = comburl
@@ -168,7 +164,6 @@ while scan == 0:
                 soup = BeautifulSoup(data, 'html.parser')
                 curchar = 0
                 charcheck = ""
-                
             
         if charcheck in (number): #This is the brain of my perverted little code. This just checks for all six digit numbers on a page.
             if data[curchar+1] in (number):
