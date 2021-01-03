@@ -6,7 +6,7 @@ import requests
 scan = 4
 curpage = 1
 curpagestr = str(curpage)
-comburl =                                                                                                                                                                     "https://nhentai.net/search/?q=english&page="+curpagestr
+comburl = "https://nhentai.net/search/?q=english&page="+curpagestr
 url = comburl
 number = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
 h1 = ''
@@ -54,10 +54,10 @@ while scan == 0:
                 hfinal = hfinal + h1 #Combines all six digit numbers on the page into a single variable.
                 curpage = curpage + 1 #Now that all six digit numbers on the page are saved, we can move on to searching the next page.
                 print(curpage)
-                if curpage == 3116: #Check how many English pages on NHentai, then change this var to that ammount.
+                if curpage == 3116: #Check how many English pages on NHentai, then change this var to that ammount, plus 1.
                     print(hfinal) #This prints out literally every six digit number on every page.
                 curpagestr = str(curpage)
-                comburl =                                                                                                                                                                     "https://nhentai.net/search/?q=english&page="+curpagestr
+                comburl = "https://nhentai.net/search/?q=english&page="+curpagestr
                 url = comburl
                 print(comburl)
                 endpage = "</script></body></html>"
